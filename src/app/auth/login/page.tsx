@@ -155,20 +155,24 @@ export default function LoginPage() {
 
           <div className="pt-4 border-t border-zinc-100">
             <p className="text-xs text-zinc-400 text-center mb-3 uppercase tracking-wider font-medium">Demo Credentials</p>
-            <div className="grid grid-cols-2 gap-2 text-xs">
+            <div className="rounded-lg border border-zinc-200 overflow-hidden text-xs">
+              <div className="grid grid-cols-3 bg-zinc-50 px-3 py-1.5 font-medium text-zinc-500">
+                <span>Role</span><span>Email</span><span className="text-right">Password</span>
+              </div>
               {[
-                { role: "Admin", email: "admin@sabari.com", color: "text-purple-600", bg: "bg-purple-50" },
-                { role: "Company", email: "company@sabari.com", color: "text-blue-600", bg: "bg-blue-50" },
-                { role: "Counter", email: "counter@sabari.com", color: "text-cyan-600", bg: "bg-cyan-50" },
-                { role: "Driver", email: "driver@sabari.com", color: "text-green-600", bg: "bg-green-50" },
-              ].map((d) => (
-                <div key={d.role} className={`${d.bg} rounded-lg p-2.5 text-center hover:opacity-80 transition-opacity cursor-default`}>
-                  <p className={`${d.color} font-semibold`}>{d.role}</p>
-                  <p className="text-zinc-500 mt-0.5">{d.email}</p>
+                { role: "Admin", email: "admin@sabari.com", color: "text-purple-600" },
+                { role: "Company", email: "company@sabari.com", color: "text-blue-600" },
+                { role: "Counter", email: "counter@sabari.com", color: "text-cyan-600" },
+                { role: "Driver", email: "driver@sabari.com", color: "text-green-600" },
+                { role: "Passenger", email: "passenger@sabari.com", color: "text-amber-600" },
+              ].map((d, i) => (
+                <div key={d.role} className={`grid grid-cols-3 px-3 py-1.5 items-center ${i < 4 ? "border-t border-zinc-100" : ""}`}>
+                  <span className={`${d.color} font-semibold`}>{d.role}</span>
+                  <span className="text-zinc-600">{d.email}</span>
+                  <span className="text-zinc-400 text-right">password</span>
                 </div>
               ))}
             </div>
-            <p className="text-xs text-zinc-400 text-center mt-2">Password: <span className="text-zinc-500 font-medium">password</span></p>
           </div>
         </div>
       </div>

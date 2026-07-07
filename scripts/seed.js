@@ -416,6 +416,9 @@ async function seed() {
   for (let i = 0; i < 15; i++) {
     driverUsers.push({ firstName: ["Ram", "Shyam", "Hari", "Gopal", "Bikash", "Deepak", "Sanjay", "Rajan", "Prakash", "Nabin", "Suresh", "Manoj", "Dipak", "Arun", "Kiran"][i], lastName: ["Sharma", "Thapa", "Poudel", "Rai", "Gurung", "Magar", "Tamang", "Karki", "Adhikari", "KC", "Bhattarai", "Lama", "Shrestha", "Maharjan", "Bhandari"][i], email: `driver${i + 1}@sabari.com`, phone: `980110000${i.toString().padStart(2, "0")}`, password, role: "driver", isActive: true })
   }
+  const passengerUsers = [
+    { firstName: "Passenger", lastName: "Main", email: "passenger@sabari.com", phone: "9801200000", password, role: "passenger", isActive: true },
+  ]
   for (let i = 0; i < 10; i++) {
     passengerUsers.push({ firstName: ["Amit", "Priya", "Rahul", "Sita", "Arjun", "Neha", "Vijay", "Anita", "Ravi", "Deepa"][i], lastName: ["Sharma", "Thapa", "Poudel", "Rai", "Gurung", "Magar", "Tamang", "Karki", "Adhikari", "KC"][i], email: `passenger${i + 1}@sabari.com`, phone: `980120000${i.toString().padStart(2, "0")}`, password, role: "passenger", isActive: true })
   }
